@@ -1,3 +1,4 @@
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: process.env.NODE_ENV || "production",
   module: {
@@ -10,5 +11,11 @@ module.exports = {
       }
     ]
   },
-  watch: true
+  watch: true,
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: "./src/index.html",
+      filename: "index.html"
+    })
+  ]
 };
